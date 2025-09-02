@@ -1,0 +1,108 @@
+/* Container principal */
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animação ao passar o mouse no card */
+.cardContainer:hover {
+    transform: translateY(-6px);
+}
+
+/* Grid geral dos pratos */
+.pageContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    width: 100%;
+}
+
+/* Estilo do Card do prato */
+.plateCard {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+    max-width: 320px;
+}
+
+/* Imagem do prato */
+.plateImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+/* Conteúdo do prato */
+.plateContent {
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    flex-grow: 1;
+}
+
+.plateContent h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.plateContent p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Preço */
+.platePrice {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Botão de adicionar */
+.addButton {
+    margin-top: 0.8em;
+    padding: 0.7em 1.2em;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.addButton:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .pageContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.2em;
+        padding: 1em;
+    }
+
+    .plateImage {
+        height: 160px;
+    }
+}

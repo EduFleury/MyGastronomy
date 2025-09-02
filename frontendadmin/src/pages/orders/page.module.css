@@ -1,0 +1,106 @@
+.ordersTableWrapper {
+  overflow-x: auto;
+  margin: 2em auto;
+  max-width: 1000px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.ordersTable thead {
+  background: #f7f7f7;
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 1em;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ordersTable th {
+  font-weight: 600;
+  color: #555;
+}
+
+.ordersTable tr:hover {
+  background: #fafafa;
+}
+
+/* Status - badges mais clean */
+.pickupStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 500;
+  padding: 0.25em 0.6em;
+  border-radius: 20px;
+  font-size: 0.85em;
+}
+
+.pending {
+  background: #fff8e1;
+  color: #a67c00;
+  border: 1px solid #ffe082;
+}
+
+.completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.canceled {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.orderItem {
+  margin-bottom: 0.3em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ordersTable thead {
+    display: none; /* esconde cabeçalho */
+  }
+
+  .ordersTable,
+  .ordersTable tbody,
+  .ordersTable tr,
+  .ordersTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .ordersTable tr {
+    margin-bottom: 1.2em;
+    background: #fff;
+    padding: 1em;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+
+  .ordersTable td {
+    text-align: right;
+    padding: 0.6em 0;
+    position: relative;
+    border-bottom: none;
+  }
+
+  .ordersTable td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    color: #666;
+  }
+}

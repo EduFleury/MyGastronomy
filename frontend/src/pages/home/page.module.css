@@ -1,0 +1,149 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+/* Hero (primeira section) */
+.pageContainer section:first-of-type {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pageContainer h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.pageContainer p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+/* Seção de destaques */
+.foodSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 3em 2em;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.foodSection div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75em;
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.foodSection div:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.foodSection h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.foodSection p {
+    font-size: 1rem;
+    color: var(--secondary);
+    opacity: 0.9;
+}
+
+/* Seção de contato */
+.contactSection {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    align-items: center;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.contactSection h1 {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.socialButtonsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.socialButton {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.9em;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    background: var(--primary);
+    color: var(--secondary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.socialButton:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media screen and (max-width: 1000px) {
+    .foodSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .socialButtonsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .foodSection {
+        grid-template-columns: 1fr;
+        padding: 2em 1em;
+    }
+    .pageContainer h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

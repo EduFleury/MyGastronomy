@@ -1,0 +1,93 @@
+.navbarContainer{
+    background-color: #004643;
+    height: 96px;
+    display: flex;
+    align-items: center;
+}
+
+.navbarItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 5em;
+}
+
+.navbarLinksContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+.navbarLink{
+    color: var(--secondary);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbarLink:hover {
+    color: var(--hover-btn);
+}
+
+.navbarLink::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 4px;
+    right: 0;
+    background: var(--hover-btn);
+    transition: width 0.3s ease;
+}
+.navbarLink:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.mobileNavbarItems{
+    display: none;
+}
+
+.mobileNavBarBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: xx-large;
+    padding: 0.5em;
+
+}
+
+.drawer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 2em;
+    gap: 1em;
+    background-color: #004643;
+    font-size: xx-large;
+}
+
+@media screen and (max-width: 600px){
+    .navbarItems{
+        display: none;
+    }
+
+    .mobileNavbarItems{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

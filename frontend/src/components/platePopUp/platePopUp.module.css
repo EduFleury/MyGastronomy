@@ -1,0 +1,62 @@
+.popUpContainer {
+    background-color: #faf0ca;
+    color: #004643;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.popUpContainer img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 4px solid #004643;
+}
+
+.popUpContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    padding: 1.5em;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #001e1d;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.ingredients {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e63946;
+    margin-top: 0.5em;
+}
+
+.addButton {
+    background-color: #004643;
+    color: #fff;
+    padding: 0.8em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.6em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1em;
+}
+
+.addButton:hover {
+    background-color: #006d68;
+}

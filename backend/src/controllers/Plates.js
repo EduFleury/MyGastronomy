@@ -1,0 +1,61 @@
+import PlatesDataAccess from "../dataAccess/plates.js";
+import {ok, serverError} from '../helpers/httpResponse.js'
+
+export default class PlatesControllers {
+    constructor(){
+        this.dataAccess = new PlatesDataAccess()
+    }
+
+    async getPlates(){
+        try{
+            const Plates = await this.dataAccess.getPlates()
+
+            return ok(Plates)
+        }catch(error){
+            serverError(error)
+        }
+    }
+
+    async getAvailablePlates(){
+        try{
+            const Plates = await this.dataAccess.getAvailablePlates()
+
+            return ok(Plates)
+        }catch(error){
+            serverError(error)
+        }
+    }
+
+    async addPlate(plateData){
+        try{
+            const result = await this.dataAccess.addPlate(plateData)
+
+            return ok(result)
+
+        }catch(error){
+            serverError(error)
+        }
+    }
+
+    async deletePlate(plateId){
+        try{
+            const result = await this.dataAccess.deletePlate(plateId)
+
+            return ok(result)
+
+        }catch(error){
+            serverError(error)
+        }
+    }
+
+    async updatePlate(plateId, plateData){
+        try{
+            const result = await this.dataAccess.updatePlate(plateId, plateData)
+
+            return ok(result)
+
+        }catch(error){
+            serverError(error)
+        }
+    }
+}
